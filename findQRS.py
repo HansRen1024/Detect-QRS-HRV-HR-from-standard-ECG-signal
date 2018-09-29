@@ -45,7 +45,7 @@ def findQS(TimeList,ECGlist,RPeakIndexList):
     for ind in RPeakIndexList:
         if ind<w1:
             w1=ind
-        elif ind < w2:
+        if ind < w2:
             w2=ind
         if ind+w1>l:
             w1=l-ind-1
