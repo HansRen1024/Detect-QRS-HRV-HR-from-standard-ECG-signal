@@ -65,24 +65,14 @@ def findQS(TimeList,ECGlist,RPeakIndexList):
         w1Smin=min(w1TempS)
         w2Qmin=min(w2TempQ)
         w2Smin=min(w2TempS)
-        if w1Qmin==w2Qmin:
-            QxMin.append(TimeList[w1Qmin[1]])
-            QyMin.append(ECGlist[w1Qmin[1]])
-        elif w1Qmin>w2Qmin:
-            QxMin.append(TimeList[w2Qmin[1]])
-            QyMin.append(ECGlist[w2Qmin[1]])
-        elif w1Qmin<w2Qmin:
-            QxMin.append(TimeList[w1Qmin[1]])
-            QyMin.append(ECGlist[w1Qmin[1]])
-        if w1Smin==w2Smin:
-            SxMin.append(TimeList[w1Smin[1]])
-            SyMin.append(ECGlist[w1Smin[1]])
-        elif w1Smin>w2Smin:
-            SxMin.append(TimeList[w2Smin[1]])
-            SyMin.append(ECGlist[w2Smin[1]])
-        elif w1Smin<w2Smin:
-            SxMin.append(TimeList[w1Smin[1]])
-            SyMin.append(ECGlist[w1Smin[1]])
+        wQmin=min([w1Qmin,w2Qmin])
+        QxMin.append(TimeList[wQmin[1]])
+        QyMin.append(ECGlist[wQmin[1]])
+        QIndex.append(wQmin[1])
+        wSmin=min([w1Smin,w2Smin])
+        SxMin.append(TimeList[wSmin[1]])
+        SyMin.append(ECGlist[wSmin[1]])
+        SIndex.append(wSmin[1])
     return QxMin,QyMin,SxMin,SyMin
             
 def findQRS(TimeList，ECGlist):
