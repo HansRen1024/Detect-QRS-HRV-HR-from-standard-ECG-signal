@@ -35,14 +35,14 @@ def findR(TimeList,ECGlist):
     return xMax,yMax,RPeakIndexList
 def findQS(TimeList,ECGlist,RPeakIndexList):
     fs=250
-    w1=fs/10
-    w2=fs/5
     l=len(ECGlist)
     QxMin=[]
     QyMin=[]
     SxMin=[]
     SyMin=[]
     for ind in RPeakIndexList:
+        w1=fs/10
+        w2=fs/5
         if ind<w1:
             w1=ind
         if ind < w2:
