@@ -25,7 +25,7 @@ def findR(TimeList,ECGlist):
                 tempIndex.append(RMaxIndex[i])
         tempECG=[]
         for ind in tempIndex:
-            tempECG.append(y[ind])
+            tempECG.append(ECGlist[ind])
         tempRPeakIndex=tempECG.index(max(tempECG))
         RPeakIndexList.append(tempIndex[tempRPeakIndex])
         tempIndex=[]
